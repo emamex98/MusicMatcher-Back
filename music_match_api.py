@@ -1,7 +1,24 @@
 #!flask/bin/python
 import json
+import os
+import pandas as pd
+import pymysql
+from dotenv import load_dotenv
 from flask import Flask, jsonify, request, abort
 
+load_dotenv('.env')
+
+host=os.getenv("HOST_MM")
+port=int(os.getenv("PORT_MM"))
+dbname=os.getenv("DBNAME_MM")
+user=os.getenv("USER_MM")
+password=os.getenv("PASS_MM")
+
+conn = pymysql.connect(host, user=user,port=port,passwd=password, db=dbname)
+
+print(pd.read_sql('show tables;', con=conn)) 
+
+"""
 data = None
 with open('data.json') as file:
     data = json.load(file)
@@ -54,4 +71,4 @@ def update_token(user_id):
     return jsonify({'user': data[user_id]})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True) """
