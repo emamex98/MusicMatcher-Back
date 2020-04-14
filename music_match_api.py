@@ -5,13 +5,16 @@ from flask import Flask, jsonify, request, abort
 data = None
 with open('data.json') as file:
     data = json.load(file)
-    print(data)
 
 def write_json(data):
     with open('data.json', 'w') as file:
         json.dump(data, file)
 
 app = Flask(__name__)
+
+@app.route('/users', methods=['GET'])
+def get_users():
+    return jsonify({'users':data})
 
 # get user profile
 @app.route('/user/<int:user_id>', methods=['GET'])
