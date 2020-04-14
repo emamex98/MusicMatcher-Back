@@ -12,6 +12,7 @@ def write_json(data):
 
 app = Flask(__name__)
 
+#gets all users
 @app.route('/users', methods=['GET'])
 def get_users():
     return jsonify({'users':data})
