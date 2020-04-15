@@ -15,29 +15,22 @@ user=os.getenv("USER_MM")
 password=os.getenv("PASS_MM")
 
 conn = pymysql.connect(host, user=user,port=port,passwd=password, db=dbname)
-
-print(pd.read_sql('show tables;', con=conn)) 
-
-"""
-data = None
-with open('data.json') as file:
-    data = json.load(file)
-
-def write_json(data):
-    with open('data.json', 'w') as file:
-        json.dump(data, file)
+cur = conn.cursor()
 
 app = Flask(__name__)
 
 #gets all users
 @app.route('/users', methods=['GET'])
 def get_users():
-    return jsonify({'users':data})
+    users = pd.read_sql('select * from User;', con=conn).to_json(orient='records')
+    return users
 
 # get user profile
 @app.route('/user/<int:user_id>', methods=['GET'])
 def get_user(user_id):
-    return jsonify({'user':data[user_id]})
+    query = 'select * from User where userId='+str(user_id)+';'
+    user = pd.read_sql(query, con=conn).to_json(orient='records')
+    return user
 
 # post to create user
 @app.route('/user/create/', methods=['POST'])
@@ -45,7 +38,6 @@ def create_user():
     if not request.json:
         abort(400)
     user = {
-        "user_id": data[-1]["user_id"]+1,
         "name": request.json['name'],
         "email": request.json['email'],
         "gender": request.json.get('gender', ""),
@@ -57,18 +49,21 @@ def create_user():
         "limit_range_distance": request.json.get('limit_range_distance', 10),
         "spotify_token": ""
     }
-    data.append(user)
-    write_json(data)
-    return jsonify({'user':user}), 201
+    query = 'INSERT INTO User (name,email,gender,age,city,genderInterest,minAgeInterest,maxAgeInterest,limitRangeDistance,spotifyToken) VALUES ("'+user["name"]+'","'+user["email"]+'","'+user["gender"]+'",'+str(user["age"])+',"'+user["city"]+'","'+user["gender_interest"]+'",'+str(user["min_age_interest"])+','+str(user["max_age_interest"])+','+str(user["limit_range_distance"])+',"'+user["spotify_token"]+'");'
+    cur.execute(query)
+    user_id = cur.lastrowid
+    conn.commit()
+    return str(user_id), 201
     
 # put to update spotify token
 @app.route('/user/update/<int:user_id>', methods=['PUT'])
 def update_token(user_id):
     if not request.json:
         abort(400)
-    data[user_id]['spotify_token'] = request.json.get('spotify_token',data[user_id]['spotify_token'])
-    write_json(data)
-    return jsonify({'user': data[user_id]})
+    query = 'UPDATE User SET spotifyToken = "'+request.json['spotify_token']+'" WHERE userId = '+str(user_id)+';'
+    cur.execute(query)
+    conn.commit()
+    return str(user_id), 201
 
 if __name__ == '__main__':
-    app.run(debug=True) """
+    app.run(debug=True) 
