@@ -1,7 +1,6 @@
 #!flask/bin/python
 import json
 import os
-import pandas as pd
 import pymysql
 from dotenv import load_dotenv
 from flask import Flask, jsonify, request, abort
@@ -14,7 +13,7 @@ dbname=os.getenv("DBNAME_MM")
 user=os.getenv("USER_MM")
 password=os.getenv("PASS_MM")
 
-conn = pymysql.connect(host, user=user,port=port,passwd=password, db=dbname)
+conn = pymysql.connect(host, user=user,port=port,passwd=password, db=dbname, cursorclass=pymysql.cursors.DictCursor)
 cur = conn.cursor()
 
 app = Flask(__name__)
@@ -22,15 +21,18 @@ app = Flask(__name__)
 #gets all users
 @app.route('/users', methods=['GET'])
 def get_users():
-    users = pd.read_sql('select * from User;', con=conn).to_json(orient='records')
-    return users
+    query = 'select * from User;'
+    cur.execute(query)
+    result = cur.fetchall()
+    return jsonify({"users":result})
 
 # get user profile
 @app.route('/user/<int:user_id>', methods=['GET'])
 def get_user(user_id):
     query = 'select * from User where userId='+str(user_id)+';'
-    user = pd.read_sql(query, con=conn).to_json(orient='records')
-    return user
+    cur.execute(query)
+    result = cur.fetchall()
+    return jsonify({"user":result})
 
 # post to create user
 @app.route('/user/create/', methods=['POST'])
@@ -53,7 +55,8 @@ def create_user():
     cur.execute(query)
     user_id = cur.lastrowid
     conn.commit()
-    return str(user_id), 201
+    result = jsonify({"user_id":user_id})
+    return result, 201
     
 # put to update spotify token
 @app.route('/user/update/<int:user_id>', methods=['PUT'])
@@ -63,7 +66,8 @@ def update_token(user_id):
     query = 'UPDATE User SET spotifyToken = "'+request.json['spotify_token']+'" WHERE userId = '+str(user_id)+';'
     cur.execute(query)
     conn.commit()
-    return str(user_id), 201
+    result = jsonify({"user_id":user_id})
+    return result, 201
 
 if __name__ == '__main__':
     app.run(debug=True) 
