@@ -4,6 +4,7 @@ import os
 import pymysql
 from dotenv import load_dotenv
 from flask import Flask, jsonify, request, abort
+from flask_cors import CORS, cross_origin
 
 load_dotenv('.env')
 
@@ -17,6 +18,7 @@ conn = pymysql.connect(host, user=user,port=port,passwd=password, db=dbname, cur
 cur = conn.cursor()
 
 app = Flask(__name__)
+CORS(app)
 
 def checkPreference(candidates, user_id):
     query = 'SELECT genderInterest, minAgeInterest, maxAgeInterest From User WHERE userId='+str(user_id)+';'
@@ -235,7 +237,7 @@ def get_user_match(user_id):
     return jsonify({"users":results})
 
 # put unmatch user
-@app.rout('/user/<int:user_id>/match', methods=['PUT'])
+@app.route('/user/<int:user_id>/match', methods=['PUT'])
 def put_user_unmatch(user_id):
     if not request.json:
         abort(400)
