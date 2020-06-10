@@ -234,6 +234,17 @@ def get_user_match(user_id):
     results = cur.fetchall()
     return jsonify({"users":results})
 
+# put unmatch user
+@app.rout('/user/<int:user_id>/match', methods=['PUT'])
+def put_user_unmatch(user_id):
+    if not request.json:
+        abort(400)
+    query = 'UPDATE User SET isUnmatched = true WHERE (userA = '+str(user_id)+' AND userB='+str(request.json['otherUser'])+') OR (userA='+str(request.json['otherUser'])+' AND userB='+str(user_id)+');'
+    cur.execute(query)
+    conn.commit()
+    result = jsonify({"user_id":user_id})
+    return result, 201
+
 
 
 """
