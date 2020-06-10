@@ -1,0 +1,768 @@
+{
+  "items": [
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/3Xt3RrJMFv5SZkCfUE8C1J"
+      },
+      "followers": {
+        "href": null,
+        "total": 318229
+      },
+      "genres": [
+        "art pop",
+        "dance pop",
+        "electropop",
+        "escape room",
+        "indie poptimism",
+        "pop",
+        "post-teen pop",
+        "transpop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/3Xt3RrJMFv5SZkCfUE8C1J",
+      "id": "3Xt3RrJMFv5SZkCfUE8C1J",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/e37116ea91cc35a3f949730a6849b3d5a1c3a78b",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/10f699dd089af383987f99065400de577d81d3b5",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/e38583fd84d6204f34ec7ac5892bdc9186e1d720",
+          "width": 160
+        }
+      ],
+      "name": "Kim Petras",
+      "popularity": 69,
+      "type": "artist",
+      "uri": "spotify:artist:3Xt3RrJMFv5SZkCfUE8C1J"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/4q3ewBCX7sLwd24euuV69X"
+      },
+      "followers": {
+        "href": null,
+        "total": 20792991
+      },
+      "genres": [
+        "latin",
+        "reggaeton",
+        "trap latino"
+      ],
+      "href": "https://api.spotify.com/v1/artists/4q3ewBCX7sLwd24euuV69X",
+      "id": "4q3ewBCX7sLwd24euuV69X",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/23009960c33ef08d5973440cca17985a6c70a515",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/8ff3e392402169f239bce72b3d80c701b75150b8",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/624dd15f5bdcc1bae5fa47739601f3e0be62ebda",
+          "width": 160
+        }
+      ],
+      "name": "Bad Bunny",
+      "popularity": 100,
+      "type": "artist",
+      "uri": "spotify:artist:4q3ewBCX7sLwd24euuV69X"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/0C8ZW7ezQVs4URX5aX7Kqx"
+      },
+      "followers": {
+        "href": null,
+        "total": 20303113
+      },
+      "genres": [
+        "dance pop",
+        "pop",
+        "post-teen pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/0C8ZW7ezQVs4URX5aX7Kqx",
+      "id": "0C8ZW7ezQVs4URX5aX7Kqx",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/dc6dd5ccdccee8c947b41af13e3b60ce0a235708",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/640ac8d170be843477ac25a372344683d0449057",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/4741fad16d2ef0331bd139c7786c19233e6cfd79",
+          "width": 160
+        }
+      ],
+      "name": "Selena Gomez",
+      "popularity": 90,
+      "type": "artist",
+      "uri": "spotify:artist:0C8ZW7ezQVs4URX5aX7Kqx"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/00FQb4jTyendYWaN8pK0wa"
+      },
+      "followers": {
+        "href": null,
+        "total": 10285057
+      },
+      "genres": [
+        "art pop",
+        "pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/00FQb4jTyendYWaN8pK0wa",
+      "id": "00FQb4jTyendYWaN8pK0wa",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/6e8dc460cfb6b89d7970302259febd0aa73b38c6",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/bcdee6b17410b5d27d40bc114757e38125b00c84",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/0c50e5ae217b7a86f9f5114dc5e0f1beb8e9185d",
+          "width": 160
+        }
+      ],
+      "name": "Lana Del Rey",
+      "popularity": 87,
+      "type": "artist",
+      "uri": "spotify:artist:00FQb4jTyendYWaN8pK0wa"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/25uiPmTg16RbhZWAqwLBy5"
+      },
+      "followers": {
+        "href": null,
+        "total": 1973127
+      },
+      "genres": [
+        "candy pop",
+        "dance pop",
+        "electropop",
+        "metropopolis",
+        "pop",
+        "post-teen pop",
+        "tropical house"
+      ],
+      "href": "https://api.spotify.com/v1/artists/25uiPmTg16RbhZWAqwLBy5",
+      "id": "25uiPmTg16RbhZWAqwLBy5",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/5b2888c77aafc7f868e619291f71890145f6688b",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/3518bd20ee34c71788571f15f4ae1261a9e35ef6",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/231cd73280f585ea384070041122357dd24aa64e",
+          "width": 160
+        }
+      ],
+      "name": "Charli XCX",
+      "popularity": 78,
+      "type": "artist",
+      "uri": "spotify:artist:25uiPmTg16RbhZWAqwLBy5"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/4F4pp8NUW08JuXwnoxglpN"
+      },
+      "followers": {
+        "href": null,
+        "total": 333003
+      },
+      "genres": [
+        "rap catalan",
+        "rap latina",
+        "trap catala",
+        "trap espanol"
+      ],
+      "href": "https://api.spotify.com/v1/artists/4F4pp8NUW08JuXwnoxglpN",
+      "id": "4F4pp8NUW08JuXwnoxglpN",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/da7751645f1b8c1f20abd25dcf02c1064a8fb57e",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/f5455949b49eadd86f1b50be736c091a453b6d2e",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/47e235ca4e5356908aa63320e6998c7db43c7b03",
+          "width": 160
+        }
+      ],
+      "name": "Bad Gyal",
+      "popularity": 72,
+      "type": "artist",
+      "uri": "spotify:artist:4F4pp8NUW08JuXwnoxglpN"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/202HZzqKvPsMHcbwnDZx7u"
+      },
+      "followers": {
+        "href": null,
+        "total": 59223
+      },
+      "genres": [
+        "art pop",
+        "dance pop",
+        "electropop",
+        "escape room",
+        "hyperpop",
+        "transpop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/202HZzqKvPsMHcbwnDZx7u",
+      "id": "202HZzqKvPsMHcbwnDZx7u",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/42ac2a410285d0da558183fb95550f0282fc50f6",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/8c4248ee8892fb9fa3f00a659c26d047e52134a3",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/fb74215f0443da6bb63aab2bfbee199bcf33b455",
+          "width": 160
+        }
+      ],
+      "name": "Dorian Electra",
+      "popularity": 54,
+      "type": "artist",
+      "uri": "spotify:artist:202HZzqKvPsMHcbwnDZx7u"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/1HY2Jd0NmPuamShAr6KMms"
+      },
+      "followers": {
+        "href": null,
+        "total": 11383310
+      },
+      "genres": [
+        "dance pop",
+        "pop",
+        "post-teen pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/1HY2Jd0NmPuamShAr6KMms",
+      "id": "1HY2Jd0NmPuamShAr6KMms",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/5c40cb9dc570181bd5ff5a1d1c773cc3436cae5c",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/4d70c25482e883129d3c9ff8cdc96bf715811a2f",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/f14b1450db12a06b9ba10f938de89a2bdfa909ec",
+          "width": 160
+        }
+      ],
+      "name": "Lady Gaga",
+      "popularity": 88,
+      "type": "artist",
+      "uri": "spotify:artist:1HY2Jd0NmPuamShAr6KMms"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/6M2wZ9GZgrQXHCFfjv46we"
+      },
+      "followers": {
+        "href": null,
+        "total": 16524523
+      },
+      "genres": [
+        "dance pop",
+        "pop",
+        "uk pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/6M2wZ9GZgrQXHCFfjv46we",
+      "id": "6M2wZ9GZgrQXHCFfjv46we",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/330f9806621bc0fe67f5c06f2f1f8df53d011b4e",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/1d452370e002660986515bacbcaf28a9aea68d2e",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/44893ea0065579ff145176eab721794b7714640c",
+          "width": 160
+        }
+      ],
+      "name": "Dua Lipa",
+      "popularity": 96,
+      "type": "artist",
+      "uri": "spotify:artist:6M2wZ9GZgrQXHCFfjv46we"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/6c0qylj1D1gqcUUN2P8Ofp"
+      },
+      "followers": {
+        "href": null,
+        "total": 128987
+      },
+      "genres": [
+        "chilean indie",
+        "chilean rock",
+        "pop chileno"
+      ],
+      "href": "https://api.spotify.com/v1/artists/6c0qylj1D1gqcUUN2P8Ofp",
+      "id": "6c0qylj1D1gqcUUN2P8Ofp",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/487b0a89607271e4c77b585c082ef5a64364d3a4",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/e6d18e9ff52a5fb1ea8b61a4c7258487de744c79",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/853db5668dce466fc53164866beaf6d3ac15d8d7",
+          "width": 160
+        }
+      ],
+      "name": "Javiera Mena",
+      "popularity": 55,
+      "type": "artist",
+      "uri": "spotify:artist:6c0qylj1D1gqcUUN2P8Ofp"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/1Xyo4u8uXC1ZmMpatF05PJ"
+      },
+      "followers": {
+        "href": null,
+        "total": 20071685
+      },
+      "genres": [
+        "canadian contemporary r&b",
+        "canadian pop",
+        "pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/1Xyo4u8uXC1ZmMpatF05PJ",
+      "id": "1Xyo4u8uXC1ZmMpatF05PJ",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/d9a875c37277c35b94c60c00d2cd256db098505d",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/91c55730d3f156894d744d560afe441af3f5a228",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/19393c56208fe6c312384879c11ff3da463f1304",
+          "width": 160
+        }
+      ],
+      "name": "The Weeknd",
+      "popularity": 98,
+      "type": "artist",
+      "uri": "spotify:artist:1Xyo4u8uXC1ZmMpatF05PJ"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/6jJ0s89eD6GaHleKKya26X"
+      },
+      "followers": {
+        "href": null,
+        "total": 15163894
+      },
+      "genres": [
+        "dance pop",
+        "pop",
+        "post-teen pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/6jJ0s89eD6GaHleKKya26X",
+      "id": "6jJ0s89eD6GaHleKKya26X",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/aa35fc26f93448a00947cf54fbd877759296f4ff",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/3ed7b3cd6b79aa4b74a744e1e7ebae23b4d1062a",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/b21556cdf44dbaf0349786fba148ff32264294d7",
+          "width": 160
+        }
+      ],
+      "name": "Katy Perry",
+      "popularity": 87,
+      "type": "artist",
+      "uri": "spotify:artist:6jJ0s89eD6GaHleKKya26X"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02"
+      },
+      "followers": {
+        "href": null,
+        "total": 28582594
+      },
+      "genres": [
+        "dance pop",
+        "pop",
+        "post-teen pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/06HL4z0CvFAxyc27GXpf02",
+      "id": "06HL4z0CvFAxyc27GXpf02",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/62b33d12e2b9a033cf77585f6e3d4b2c6b3a63a1",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/9ab124f3323d161f87fc9b7f8b82ab1717483b3a",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/d28b46cd7e1b7336d1688d462085535963a77311",
+          "width": 160
+        }
+      ],
+      "name": "Taylor Swift",
+      "popularity": 92,
+      "type": "artist",
+      "uri": "spotify:artist:06HL4z0CvFAxyc27GXpf02"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/163tK9Wjr9P9DmM0AVK7lm"
+      },
+      "followers": {
+        "href": null,
+        "total": 5677005
+      },
+      "genres": [
+        "art pop",
+        "dance pop",
+        "electropop",
+        "metropopolis",
+        "nz pop",
+        "pop",
+        "post-teen pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/163tK9Wjr9P9DmM0AVK7lm",
+      "id": "163tK9Wjr9P9DmM0AVK7lm",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/d25fc756cd04c8b3ea196b7c07c6d057685cc405",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/ca2e7772dcdfd03401cdd0c66aeee1bea8ea3904",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/2f22ea3ea1597887d86441a030204dac49a74a81",
+          "width": 160
+        }
+      ],
+      "name": "Lorde",
+      "popularity": 80,
+      "type": "artist",
+      "uri": "spotify:artist:163tK9Wjr9P9DmM0AVK7lm"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/6LqNN22kT3074XbTVUrhzX"
+      },
+      "followers": {
+        "href": null,
+        "total": 5407994
+      },
+      "genres": [
+        "dance pop",
+        "electropop",
+        "pop",
+        "post-teen pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/6LqNN22kT3074XbTVUrhzX",
+      "id": "6LqNN22kT3074XbTVUrhzX",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/282055081bba71c1f715c6459de13d12fb4373d5",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/1ff77be1c42cfacecbcb22b6965e8ae9c39c0c12",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/ceff67562edd8f597d3cfc0d607c438960944b0d",
+          "width": 160
+        }
+      ],
+      "name": "Kesha",
+      "popularity": 81,
+      "type": "artist",
+      "uri": "spotify:artist:6LqNN22kT3074XbTVUrhzX"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/5a2w2tgpLwv26BYJf2qYwu"
+      },
+      "followers": {
+        "href": null,
+        "total": 140574
+      },
+      "genres": [
+        "art pop",
+        "dance pop",
+        "electropop",
+        "escape room",
+        "hyperpop",
+        "indietronica",
+        "transpop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/5a2w2tgpLwv26BYJf2qYwu",
+      "id": "5a2w2tgpLwv26BYJf2qYwu",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ced106b1ff9bb908a468b23c694b33d676c12281",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/c9bfafeed2f77187b6c6b65023e6489056313cb7",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/92227fefe3bb4803ce85231c8116f0a7b0d27c81",
+          "width": 160
+        }
+      ],
+      "name": "SOPHIE",
+      "popularity": 55,
+      "type": "artist",
+      "uri": "spotify:artist:5a2w2tgpLwv26BYJf2qYwu"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/1AHswQqsDNmu1xaE8KpBne"
+      },
+      "followers": {
+        "href": null,
+        "total": 7504
+      },
+      "genres": [
+        "escape room",
+        "hyperpop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/1AHswQqsDNmu1xaE8KpBne",
+      "id": "1AHswQqsDNmu1xaE8KpBne",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/0bf6a52be048790297424fbb30d4d34b002feeb0",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/046ad3e9f0768e01c7e19d363b462961a6a2479a",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/fb7d0df305e9843149ba06fb4069cc819c17cc7d",
+          "width": 160
+        }
+      ],
+      "name": "COBRAH",
+      "popularity": 40,
+      "type": "artist",
+      "uri": "spotify:artist:1AHswQqsDNmu1xaE8KpBne"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/3Dz4sliAAIVOlALfHW9TtD"
+      },
+      "followers": {
+        "href": null,
+        "total": 36531
+      },
+      "genres": [
+        "chilean indie",
+        "perreo",
+        "rap latina"
+      ],
+      "href": "https://api.spotify.com/v1/artists/3Dz4sliAAIVOlALfHW9TtD",
+      "id": "3Dz4sliAAIVOlALfHW9TtD",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/dc47f3e1c90ddab0eb8f092e7b22139e96a062e7",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/1c5644931203476097fd8e89652342ad096d92c8",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/79e24728668032f11c34c1a6412dc2b8a37f24bc",
+          "width": 160
+        }
+      ],
+      "name": "Tomasa del Real",
+      "popularity": 49,
+      "type": "artist",
+      "uri": "spotify:artist:3Dz4sliAAIVOlALfHW9TtD"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/1U1el3k54VvEUzo3ybLPlM"
+      },
+      "followers": {
+        "href": null,
+        "total": 902835
+      },
+      "genres": [
+        "colombian pop",
+        "pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/1U1el3k54VvEUzo3ybLPlM",
+      "id": "1U1el3k54VvEUzo3ybLPlM",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/3fc24e54951329e7afb9b69e1ccd0ccaac0ec1e4",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/b8c50890d72c745de785c82f771e633913139eaa",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/84f54f231fd6fbc36f47ab02e091d6b1a1788baa",
+          "width": 160
+        }
+      ],
+      "name": "Kali Uchis",
+      "popularity": 79,
+      "type": "artist",
+      "uri": "spotify:artist:1U1el3k54VvEUzo3ybLPlM"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/7mUQPmZ6OzwtJEEXDOqyOY"
+      },
+      "followers": {
+        "href": null,
+        "total": 5376
+      },
+      "genres": [
+        "escape room",
+        "hyperpop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/7mUQPmZ6OzwtJEEXDOqyOY",
+      "id": "7mUQPmZ6OzwtJEEXDOqyOY",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/52c2056d08b601d868608053c6755a646caade27",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/bde907bbadb21d41a275dc822c9f67b818835539",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/cfbff6efe16230af10d3909e10c03cb023fcf330",
+          "width": 160
+        }
+      ],
+      "name": "That Kid",
+      "popularity": 43,
+      "type": "artist",
+      "uri": "spotify:artist:7mUQPmZ6OzwtJEEXDOqyOY"
+    }
+  ],
+  "total": 50,
+  "limit": 20,
+  "offset": 0,
+  "href": "https://api.spotify.com/v1/me/top/artists",
+  "previous": null,
+  "next": "https://api.spotify.com/v1/me/top/artists?limit=20&offset=20"
+}
