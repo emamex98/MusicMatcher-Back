@@ -102,7 +102,7 @@ def insertMatchedTrack(macthId, trackId):
     exists = cur.fetchall()
     if exists:
         return
-    queryInsert = 'INSERT INTO MatchedTrack (matchId, trackId) VALUES ('+str(macthId)+',"'+trackId+'");''
+    queryInsert = 'INSERT INTO MatchedTrack (matchId, trackId) VALUES ('+str(macthId)+',"'+trackId+'");'
     cur.execute(queryInsert)
     #conn.commit()
 
@@ -217,7 +217,7 @@ def get_top_genre(user_id):
 # post user match track
 @app.route('/user/<int:user_id>/match_track', methods=['POST'])
 def post_user_match_track(user_id):
-    candidates = match(user_id)
+    candidates = matchTracks(user_id)
 
     for candidate in candidates:
         matchId = insertMatchByTrack(user_id, candidate)
