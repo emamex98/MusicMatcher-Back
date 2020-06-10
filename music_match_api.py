@@ -80,6 +80,14 @@ def post_top_track(user_id):
         conn.commit()
     return jsonify({"user_id":user_id}),201
 
+# get users top tracks
+@app.route('/user/<int:user_id>/top_tracks', methods=['GET'])
+def get_top_track(user_id):
+    query = 'SELECT trackId, ranking From TopTracks WHERE userId='+str(user_id)+';'
+    cur.execute(query)
+    results = cur.fetchall()
+    return jsonify({"users":results})
+
 # post users top artists and genres
 @app.route('/user/<int:user_id>/top_artists', methods=['POST'])
 def post_top_artist(user_id):
@@ -101,6 +109,22 @@ def post_top_artist(user_id):
         cur.execute(query)
         conn.commit()
     return jsonify({"user_id":user_id}),201
+
+# get users top artists and genres
+@app.route('/user/<int:user_id>/top_artists', methods=['GET'])
+def get_top_artist(user_id):
+    query = 'SELECT artistId, ranking From TopArtists WHERE userId='+str(user_id)+';'
+    cur.execute(query)
+    results = cur.fetchall()
+    return jsonify({"users":results})
+
+# get users top genres
+@app.route('/user/<int:user_id>/top_genres', methods=['GET'])
+def get_top_genre(user_id):
+    query = 'SELECT genreId, ranking From TopGenres WHERE userId='+str(user_id)+';'
+    cur.execute(query)
+    results = cur.fetchall()
+    return jsonify({"users":results})
 
 #@app.route('/user/<int:user_id>/match', methods=['POST'])
 #def post_user_match(user_id):
