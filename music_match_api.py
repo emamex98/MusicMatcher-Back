@@ -17,6 +17,9 @@ conn = pymysql.connect(host, user=user,port=port,passwd=password, db=dbname, cur
 cur = conn.cursor()
 
 app = Flask(__name__)
+app.config['CORS_HEADERS'] = 'Content-Type'
+app.config['CORS_ORIGINS'] = '*' 
+
 
 def checkPreference(candidates, user_id):
     query = 'SELECT genderInterest, minAgeInterest, maxAgeInterest From User WHERE userId='+str(user_id)+';'
@@ -108,6 +111,7 @@ def insertMatchedTrack(macthId, trackId):
 
 #gets all users
 @app.route('/users', methods=['GET'])
+@cross_origin()
 def get_users():
     query = 'select * from User;'
     cur.execute(query)
@@ -116,6 +120,7 @@ def get_users():
 
 # get user profile
 @app.route('/user/<int:user_id>', methods=['GET'])
+@cross_origin()
 def get_user(user_id):
     query = 'select * from User where userId='+str(user_id)+';'
     cur.execute(query)
@@ -124,6 +129,7 @@ def get_user(user_id):
 
 # post to create user
 @app.route('/user/create/', methods=['POST'])
+@cross_origin()
 def create_user():
     if not request.json:
         abort(400)
@@ -148,6 +154,7 @@ def create_user():
     
 # put to update spotify token
 @app.route('/user/update/<int:user_id>', methods=['PUT'])
+@cross_origin()
 def update_token(user_id):
     if not request.json:
         abort(400)
@@ -159,6 +166,7 @@ def update_token(user_id):
 
 # post users top tracks
 @app.route('/user/<int:user_id>/top_tracks', methods=['POST'])
+@cross_origin()
 def post_top_track(user_id):
     if not request.json:
         abort(400)
@@ -170,6 +178,7 @@ def post_top_track(user_id):
 
 # get users top tracks
 @app.route('/user/<int:user_id>/top_tracks', methods=['GET'])
+@cross_origin()
 def get_top_track(user_id):
     query = 'SELECT trackId, ranking From TopTracks WHERE userId='+str(user_id)+';'
     cur.execute(query)
@@ -178,6 +187,7 @@ def get_top_track(user_id):
 
 # post users top artists and genres
 @app.route('/user/<int:user_id>/top_artists', methods=['POST'])
+@cross_origin()
 def post_top_artist(user_id):
     if not request.json:
         abort(400)
@@ -200,6 +210,7 @@ def post_top_artist(user_id):
 
 # get users top artists and genres
 @app.route('/user/<int:user_id>/top_artists', methods=['GET'])
+@cross_origin()
 def get_top_artist(user_id):
     query = 'SELECT artistId, ranking From TopArtists WHERE userId='+str(user_id)+';'
     cur.execute(query)
@@ -208,6 +219,7 @@ def get_top_artist(user_id):
 
 # get users top genres
 @app.route('/user/<int:user_id>/top_genres', methods=['GET'])
+@cross_origin()
 def get_top_genre(user_id):
     query = 'SELECT genreId, ranking From TopGenres WHERE userId='+str(user_id)+';'
     cur.execute(query)
@@ -235,7 +247,7 @@ def get_user_match(user_id):
     return jsonify({"users":results})
 
 # put unmatch user
-@app.rout('/user/<int:user_id>/match', methods=['PUT'])
+@app.route('/user/<int:user_id>/match', methods=['PUT'])
 def put_user_unmatch(user_id):
     if not request.json:
         abort(400)
@@ -244,7 +256,6 @@ def put_user_unmatch(user_id):
     conn.commit()
     result = jsonify({"user_id":user_id})
     return result, 201
-
 
 
 """
