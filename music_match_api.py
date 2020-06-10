@@ -69,5 +69,47 @@ def update_token(user_id):
     result = jsonify({"user_id":user_id})
     return result, 201
 
+# post users top tracks
+@app.route('/user/<int:user_id>/top_tracks', methods=['POST'])
+def post_top_track(user_id):
+    if not request.json:
+        abort(400)
+    for item in request.json['items']:
+        query = 'INSERT INTO TopTracks (trackId, userId, ranking) VALUES ("'+item['id']+'",'+str(user_id)+','+str(item['popularity'])+');'
+        cur.execute(query)
+
+# post users top artists and genres
+@app.route('/user/<int:user_id>/top_artists', methods=['POST'])
+def post_top_artist(user_id):
+    if not request.json:
+        abort(400)
+    genres = dict()
+    for item in request.json['items']:
+        query = 'INSERT INTO TopArtists (artistId, userId, ranking) VALUES ("'+item['id']+'",'+str(user_id)+','+str(item['popularity'])+');'
+        cur.execute(query)
+        for genre in item['genres']:
+            if genre not in genres:
+                genres[genre] = 1
+            else:
+                genres[genre] += 1
+    sort_orders = sorted(genres.items(), key=lambda x: x[1], reverse=True)
+    for i in range(len(sort_orders)):
+        query = 'INSERT INTO TopGenres (genreId, userId, rankig) VALUES ("'+sort_orders[i][0]+'",'+str(user_id)+','+str(i+1)+');'
+        cur.execute(query)
+
+
+
+"""
+POST
+
+post_top_artist
+post_top_track
+
+GET
+
+get_top_artist
+get_top_track
+"""
+
 if __name__ == '__main__':
     app.run(debug=True) 
