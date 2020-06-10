@@ -226,6 +226,14 @@ def post_user_match_track(user_id):
 
     return jsonify({"user_id":user_id}),201
 
+# get all matches for a user
+@app.route('/user/<int:user_id>/match', methods=['GET'])
+def get_user_match(user_id):
+    query = 'SELECT * FROM Match WHERE userA='+str(user_id)+' OR userB='+str(user_id)+';'
+    cur.execute(query)
+    results = cur.fetchall()
+    return jsonify({"users":results})
+
 
 
 """
