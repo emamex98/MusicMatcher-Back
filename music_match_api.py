@@ -22,6 +22,25 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 app.config['CORS_ORIGINS'] = '*' 
 
 
+def checkPreference(candidates, user_id):
+    query = 'SELECT genderInterest, minAgeInterest, maxAgeInterest From User WHERE userId='+str(user_id)+';'
+    cur.execute(query)
+    userInfo = cur.fetchall()
+    
+    if not userInfo["genderInterest"]:
+        return candidates
+
+    for candidate in candidates:
+        query = 'SELECT genderInterest, minAgeInterest, maxAgeInterest From User WHERE userId='+str(candidate)+';'
+        cur.execute(query)
+        userCandidate = cur.fetchall()
+        if not userCan["gender"]:
+            continue 
+        if userCandidate["gender"]!=userInfo["genderInterest"]:
+            del candidates[candidate]
+    return candidate
+    
+
 def topArtistsTable():
     #Save table TopArtists to dict
     query = 'SELECT * FROM TopArtists;'
@@ -42,6 +61,54 @@ def topGenresTable():
     cur.execute(query)
     topGenres = cur.fetchall()
     return topGenres
+
+def matchTracks(user_id):
+    trackTable = topTracksTable()
+    tracksSet = dict()
+    # {"song": {user1, user2, user3}}
+    for item in trackTable:
+        if item['trackId'] not in tracksSet:
+            tracksSet[item['trackId']] = set()
+        tracksSet[item['trackId']].add(item['userId'])
+    #{user2: 0, }
+    candidates = dict()
+
+    for track in tracksSet:
+        if user_id in tracksSet[track]:
+            tracksSet[track].remove(user_id)
+            for user in tracksSet[track]:
+                if user not in candidates:
+                    candidates[user]= []
+                candidates[user].append(track)
+    
+    for candidate in candidates:
+        if len(candidates.get(candidate))<3:
+            del candidates[candidate]
+    return candidates
+                
+def insertMatchByTrack(user_id, candidate):
+    matchId = None
+    querySelect = 'SELECT macthId, userA, userB FROM Match WHERE (userA='+str(user_id)+' AND userB='+str(candidate)+') OR (userA='+str(candidate)+' AND userB='+str(user_id)+');'
+    cur.execute(querySelect)
+    exists = cur.fetchall()
+    if exists:
+        matchId = exists["matchId"]
+    else:
+        queryInsert = 'INSERT INTO Match (userA, userB, isUnmatched) VALUES ('+str(user_id)+','+str(candidate)+',false);'
+        cur.execute(queryInsert)
+        #conn.commit()
+        matchId = cur.lastrowid
+    return matchId
+
+def insertMatchedTrack(macthId, trackId):
+    querySelect = 'SELECT matchId, trackId FROM MatchedTrack WHERE (matchId='+str(macthId)+' AND trackId="'+trackId+'");'
+    cur.execute(querySelect)
+    exists = cur.fetchall()
+    if exists:
+        return
+    queryInsert = 'INSERT INTO MatchedTrack (matchId, trackId) VALUES ('+str(macthId)+',"'+trackId+'");'
+    cur.execute(queryInsert)
+    #conn.commit()
 
 #gets all users
 @app.route('/users', methods=['GET'])
@@ -160,9 +227,36 @@ def get_top_genre(user_id):
     results = cur.fetchall()
     return jsonify({"users":results})
 
-#@app.route('/user/<int:user_id>/match', methods=['POST'])
-#def post_user_match(user_id):
+# post user match track
+@app.route('/user/<int:user_id>/match_track', methods=['POST'])
+def post_user_match_track(user_id):
+    candidates = matchTracks(user_id)
 
+    for candidate in candidates:
+        matchId = insertMatchByTrack(user_id, candidate)
+        for track in candidates[candidate]:
+            insertMatchedTrack(matchId, track)
+
+    return jsonify({"user_id":user_id}),201
+
+# get all matches for a user
+@app.route('/user/<int:user_id>/match', methods=['GET'])
+def get_user_match(user_id):
+    query = 'SELECT * FROM Match WHERE userA='+str(user_id)+' OR userB='+str(user_id)+';'
+    cur.execute(query)
+    results = cur.fetchall()
+    return jsonify({"users":results})
+
+# put unmatch user
+@app.route('/user/<int:user_id>/match', methods=['PUT'])
+def put_user_unmatch(user_id):
+    if not request.json:
+        abort(400)
+    query = 'UPDATE User SET isUnmatched = true WHERE (userA = '+str(user_id)+' AND userB='+str(request.json['otherUser'])+') OR (userA='+str(request.json['otherUser'])+' AND userB='+str(user_id)+');'
+    cur.execute(query)
+    conn.commit()
+    result = jsonify({"user_id":user_id})
+    return result, 201
 
 
 """
