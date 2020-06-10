@@ -4,6 +4,7 @@ import os
 import pymysql
 from dotenv import load_dotenv
 from flask import Flask, jsonify, request, abort
+from flask_cors import CORS, cross_origin
 
 load_dotenv('.env')
 
