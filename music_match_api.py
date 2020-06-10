@@ -77,6 +77,8 @@ def post_top_track(user_id):
     for item in request.json['items']:
         query = 'INSERT INTO TopTracks (trackId, userId, ranking) VALUES ("'+item['id']+'",'+str(user_id)+','+str(item['popularity'])+');'
         cur.execute(query)
+        conn.commit()
+    return jsonify({"user_id":user_id}),201
 
 # post users top artists and genres
 @app.route('/user/<int:user_id>/top_artists', methods=['POST'])
@@ -87,6 +89,7 @@ def post_top_artist(user_id):
     for item in request.json['items']:
         query = 'INSERT INTO TopArtists (artistId, userId, ranking) VALUES ("'+item['id']+'",'+str(user_id)+','+str(item['popularity'])+');'
         cur.execute(query)
+        conn.commit()
         for genre in item['genres']:
             if genre not in genres:
                 genres[genre] = 1
@@ -94,8 +97,14 @@ def post_top_artist(user_id):
                 genres[genre] += 1
     sort_orders = sorted(genres.items(), key=lambda x: x[1], reverse=True)
     for i in range(len(sort_orders)):
-        query = 'INSERT INTO TopGenres (genreId, userId, rankig) VALUES ("'+sort_orders[i][0]+'",'+str(user_id)+','+str(i+1)+');'
+        query = 'INSERT INTO TopGenres (genreId, userId, ranking) VALUES ("'+sort_orders[i][0]+'",'+str(user_id)+','+str(i+1)+');'
         cur.execute(query)
+        conn.commit()
+    return jsonify({"user_id":user_id}),201
+
+#@app.route('/user/<int:user_id>/match', methods=['POST'])
+#def post_user_match(user_id):
+
 
 
 
