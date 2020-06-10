@@ -18,6 +18,27 @@ cur = conn.cursor()
 
 app = Flask(__name__)
 
+def topArtistsTable():
+    #Save table TopArtists to dict
+    query = 'SELECT * FROM TopArtists;'
+    cur.execute(query)
+    topArtists = cur.fetchall()
+    return topArtists
+
+def topTracksTable():
+    #Save table TopTracks to dict
+    query = 'SELECT * FROM TopTracks;'
+    cur.execute(query)
+    topTracks = cur.fetchall()
+    return topTracks
+
+def topGenresTable():
+    #Save table TopGenres to dict
+    query = 'SELECT * FROM TopGenres;'
+    cur.execute(query)
+    topGenres = cur.fetchall()
+    return topGenres
+
 #gets all users
 @app.route('/users', methods=['GET'])
 def get_users():
@@ -145,4 +166,6 @@ get_top_track
 """
 
 if __name__ == '__main__':
+    #print(topGenresTable())
     app.run(debug=True) 
+    
